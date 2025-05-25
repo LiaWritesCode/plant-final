@@ -5,7 +5,7 @@ import './CartItem.css';
 import './ProductList';
 
 const CartItem = ({ onContinueShopping }) => {
-  const cart = useSelector(state => state.cart);
+  const cart = useSelector(state => state.cart.items);
   const cartItem = cart?.items || [];
   console.log("Cart items after adding:", cart.items);
   const dispatch = useDispatch();
