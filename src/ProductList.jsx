@@ -269,8 +269,8 @@ function ProductList({ onHomeClick }) {
 
     const handleAboutClick = (e) => {
         e.preventDefault();
-        setShowAboutUs(true);
         setShowPlants(true);
+        setShowAboutUs(true);
         setShowCart(false);
 
     };
