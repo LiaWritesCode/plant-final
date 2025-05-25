@@ -241,6 +241,7 @@ function ProductList({ onHomeClick }) {
     }
 
     const addedItems = useSelector((state) => state.cart.addedItems);
+    console.log("Checking addedItems in ProductList:", addedItems);
 
     const cartItems = useSelector((state) => state.cart.items);
 
