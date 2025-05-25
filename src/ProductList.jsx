@@ -248,6 +248,7 @@ function ProductList({ onHomeClick }) {
 
     const handleAddToCart = (product) => {
         dispatch(addItem(product)); 
+        
       };
 
     const handleHomeClick = (e) => {
