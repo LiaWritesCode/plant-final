@@ -316,7 +316,7 @@ function ProductList({ onHomeClick }) {
     <button
     className={`product-button ${addedToCart && addedToCart[plant.name] ? "added-to-cart" : ""}`}
     onClick={() => handleAddToCart(plant)}
-    disabled={Object.values(addedToCart).some(item => item.id === plant.id)}
+    disabled={Boolean(addedItems[plant.name])}
     >
     {addedToCart && addedToCart[plant.name] ? "Added to Cart" : "Add to Cart"}
     </button>

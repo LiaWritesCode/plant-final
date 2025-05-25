@@ -21,11 +21,14 @@ export const CartSlice = createSlice({
   }
 },
 
-    
     removeItem: (state, action) => {
-        state.items = Array.isArray(state.items) ? state.items.filter(item => item.name !== action.payload) : [];
-       
-    },
+    if (Array.isArray(state.items)) {
+        state.items = state.items.filter(item => item.name !== action.payload);
+        delete state.addedItems[action.payload]; // This ensures button re-enables
+    } else {
+        state.items = [];
+    }
+},
     
     updateQuantity: (state, action) => {
     const { name, quantity } = action.payload;
