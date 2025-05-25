@@ -267,6 +267,8 @@ function ProductList({ onHomeClick }) {
 
     const handleContinueShopping = (e) => {
         e.preventDefault();
+        setShowPlants(true);
+        setShowCart(false);
     
     };
     return (
