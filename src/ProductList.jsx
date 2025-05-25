@@ -5,6 +5,8 @@ import './AboutUs.jsx'
 import CartItem from './CartItem';
 import { addItem } from './CartSlice';
 
+console.log("ProductList sees addedItems:", addedItems);
+
 function ProductList({ onHomeClick }) {
     const [showCart, setShowCart] = useState(false);
     const dispatch = useDispatch();
@@ -238,7 +240,7 @@ function ProductList({ onHomeClick }) {
         textDecoration: 'none',
     }
 
-    const addedToCart = useSelector((state) => state.cart.addedItems);
+    const addedItems = useSelector((state) => state.cart.addedItems);
 
     const cartItems = useSelector((state) => state.cart.items);
 
@@ -314,11 +316,11 @@ function ProductList({ onHomeClick }) {
           <div className="product-description">{plant.description}</div> {/* Display plant description */}
           <div className="product-cost">{plant.cost}</div> {/* Display plant cost */}
     <button
-    className={`product-button ${addedToCart && addedToCart[plant.name] ? "added-to-cart" : ""}`}
+    className={`product-button ${addedItems && addedItems[plant.name] ? "added-to-cart" : ""}`}
     onClick={() => handleAddToCart(plant)}
     disabled={Boolean(addedItems[plant.name])}
     >
-    {addedToCart && addedToCart[plant.name] ? "Added to Cart" : "Add to Cart"}
+    {addedItems && addedItems[plant.name] ? "Added to Cart" : "Add to Cart"}
     </button>
 
 

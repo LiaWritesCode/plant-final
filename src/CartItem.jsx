@@ -17,6 +17,7 @@ const calculateTotalAmount = () => {
 
 const [checkoutMessage, setCheckoutMessage] = useState("");
 
+
 const handleCheckoutShopping = (e) => {
     alert("Coming Soon!");
     setCheckoutMessage("Coming Soon!");
