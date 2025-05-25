@@ -74,6 +74,7 @@ const handleRemove = (item) => {
       <h2 style={{ color: 'black' }}>Total Cart Amount: ${calculateTotalAmount()}</h2>
       <div className="continue_shopping_btn">
         <button className="get-started-button" onClick={(e) => onContinueShopping(e)}>Continue Shopping</button>
+        <br></br>
         <button className="get-started-button1">Checkout</button>
       </div>
     </div>
