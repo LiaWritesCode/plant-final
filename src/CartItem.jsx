@@ -24,12 +24,11 @@ const handleIncrement = (item) => {
 
 const handleDecrement = (item) => {
     if (item.quantity > 1) {
-      dispatch(updateQuantity(item.name, item.quantity - 1));
-    } 
+        dispatch(updateQuantity({ name: item.name, quantity: item.quantity - 1 })); } 
     else {
-      dispatch(removeItem(item.name));
+        dispatch(removeItem(item.name));
     }
-  };
+};
 
 const handleRemove = (item) => {
     dispatch(removeItem(item.name));
