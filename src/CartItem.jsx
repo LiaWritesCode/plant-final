@@ -1,4 +1,5 @@
 import React from 'react';
+import { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { addItem, removeItem, updateQuantity } from './CartSlice';
 import './CartItem.css';
@@ -17,8 +18,8 @@ const calculateTotalAmount = () => {
 const [checkoutMessage, setCheckoutMessage] = useState("");
 
 const handleCheckoutShopping = (e) => {
-    // alert("Coming Soon!");
-    // setCheckoutMessage("Coming Soon!");
+    alert("Coming Soon!");
+    setCheckoutMessage("Coming Soon!");
     };
     
 const handleIncrement = (item) => {
