@@ -7,13 +7,12 @@ import './ProductList';
 const CartItem = ({ onContinueShopping }) => {
   const cart = useSelector(state => state.cart.items);
   const cartItem = cart?.items || [];
-  console.log("Cart items after adding:", cart.items);
   const dispatch = useDispatch();
 
   // Calculate total amount for all products in the cart
 const calculateTotalAmount = () => {
     return cart.reduce((total, item) => total + parseFloat(item.cost.substring(1)) * item.quantity, 0).toFixed(2);
-  };
+};
 
 const handleCheckoutShopping = (e) => {
     alert('Functionality to be added for future reference');
@@ -49,6 +48,8 @@ const handleRemove = (item) => {
 
   return (
     <div className="cart-container">
+        <div className="cart-item">
+        </div>
       <h2 style={{ color: 'black' }}>Total Cart Amount: ${calculateTotalAmount()}</h2>
       <div>
         {cart.map(item => (
@@ -72,7 +73,7 @@ const handleRemove = (item) => {
         {calculateTotalQuantity(cart)}
 </div>
       <div className="continue_shopping_btn">
-        <button className="get-started-button" onClick={(e) => handleContinueShopping(e)}>Continue Shopping</button>
+        <button className="get-started-button" onClick={(e) => onContinueShopping(e)}>Continue Shopping</button>
         <br />
         <button className="get-started-button1">Checkout</button>
       </div>
