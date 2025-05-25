@@ -69,11 +69,11 @@ const handleRemove = (item) => {
         ))}
       </div>
       <div style={{color: 'black' }} className='total_cart_amount'>
-        Total Items in Cart:{calculateTotalQuantity(cart)}
+        Total Items in Cart: {calculateTotalQuantity(cart)}
 </div>
       <h2 style={{ color: 'black' }}>Total Cart Amount: ${calculateTotalAmount()}</h2>
       <div className="continue_shopping_btn">
-        <button className="get-started-button" onClick={(e) => onContinueShopping(e)}>Continue Shopping</button>
+        <button className="get-started-button" style={{marginRight: '20px'}} onClick={(e) => onContinueShopping(e)}>Continue Shopping</button>
         <button className="get-started-button1">Checkout</button>
       </div>
     </div>
