@@ -15,12 +15,6 @@ const calculateTotalAmount = () => {
     return cart.reduce((total, item) => total + parseFloat(item.cost.substring(1)) * item.quantity, 0).toFixed(2);
   };
 
-const handleContinueShopping = (e) => {
-    e.preventDefault();
-    setShowPlants(true);
-    setShowCart(false);
-  };
-
 const handleCheckoutShopping = (e) => {
     alert('Functionality to be added for future reference');
     };
