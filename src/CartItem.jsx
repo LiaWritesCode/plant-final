@@ -14,8 +14,11 @@ const calculateTotalAmount = () => {
     return cart.reduce((total, item) => total + parseFloat(item.cost.substring(1)) * item.quantity, 0).toFixed(2);
 };
 
+const [checkoutMessage, setCheckoutMessage] = useState("");
+
 const handleCheckoutShopping = (e) => {
-    alert('Functionality to be added for future reference');
+    alert("Coming Soon!");
+    setCheckoutMessage("Coming Soon!");
     };
     
 const handleIncrement = (item) => {
@@ -73,7 +76,9 @@ const handleRemove = (item) => {
       <h2 style={{ color: 'black' }}>Total Cart Amount: ${calculateTotalAmount()}</h2>
       <div className="continue_shopping_btn">
         <button className="get-started-button" onClick={(e) => onContinueShopping(e)}>Continue Shopping</button>
-        <button className="get-started-button1">Checkout</button>
+        <button className="get-started-button1" onClick={handleCheckoutShopping}>
+        {checkoutMessage || "Checkout"}
+    </button>
       </div>
     </div>
   );
