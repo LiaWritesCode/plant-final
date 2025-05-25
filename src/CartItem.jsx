@@ -17,6 +17,8 @@ const calculateTotalAmount = () => {
 
 const handleContinueShopping = (e) => {
     e.preventDefault();
+    setShowPlants(true);
+    setShowCart(false);
   };
 
 const handleCheckoutShopping = (e) => {
