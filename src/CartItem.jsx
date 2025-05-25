@@ -68,8 +68,8 @@ const handleRemove = (item) => {
           </div>
         ))}
       </div>
-      <div style={{color: 'black' }} className='total_cart_amount'>Total Items in Cart:
-        {calculateTotalQuantity(cart)}
+      <div style={{color: 'black' }} className='total_cart_amount'>
+        Total Items in Cart:{calculateTotalQuantity(cart)}
 </div>
       <h2 style={{ color: 'black' }}>Total Cart Amount: ${calculateTotalAmount()}</h2>
       <div className="continue_shopping_btn">
