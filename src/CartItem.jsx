@@ -1,55 +1,36 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { addItem, removeItem, updateQuantity } from './CartSlice';
+import { removeItem, updateQuantity } from './CartSlice';
 import './CartItem.css';
-import './ProductList';
 
 const CartItem = ({ onContinueShopping }) => {
-  const cart = useSelector(state => state.cart);
-  console.log("Cart component loading. Cart state:", useSelector(state => state.cart));
-  const cartItem = cart?.items || [];
+  const cart = useSelector(state => state.cart.items);
   const dispatch = useDispatch();
 
   // Calculate total amount for all products in the cart
-const calculateTotalAmount = () => {
-    return cart.reduce((total, item) => total + parseFloat(item.cost.substring(1)) * item.quantity, 0).toFixed(2);
+  const calculateTotalAmount = () => {
+ 
   };
 
-const handleContinueShopping = (e) => {
-    e.preventDefault();
+  const handleContinueShopping = (e) => {
+   
   };
 
-const handleCheckoutShopping = (e) => {
-    alert('Functionality to be added for future reference');
-    };
-    
-const handleIncrement = (item) => {
-    dispatch(updateQuantity({ name: item.name, quantity: item.quantity + 1 }));
+
+
+  const handleIncrement = (item) => {
   };
 
-const handleDecrement = (item) => {
-    if (item.quantity > 1) {
-      dispatch(updateQuantity(item.name, item.quantity - 1));
-    } 
-    else {
-      dispatch(removeItem(item.name));
-    }
+  const handleDecrement = (item) => {
+   
   };
 
-const handleRemove = (item) => {
-    dispatch(removeItem(item.name));
+  const handleRemove = (item) => {
   };
 
   // Calculate total cost based on quantity for an item
   const calculateTotalCost = (item) => {
-    let unitPrice = parseFloat(item.cost.substring(1));
-    return (unitPrice * item.quantity).toFixed(2);
   };
-
-    const calculateTotalQuantity = (cart) => {
-    return cart ? cart.reduce((total, item) => total + item.quantity, 0) : 0;
-    };
-
 
   return (
     <div className="cart-container">
@@ -72,9 +53,7 @@ const handleRemove = (item) => {
           </div>
         ))}
       </div>
-      <div style={{ marginTop: '20px', color: 'black' }} className='total_cart_amount'>
-        {calculateTotalQuantity(cart)}
-</div>
+      <div style={{ marginTop: '20px', color: 'black' }} className='total_cart_amount'></div>
       <div className="continue_shopping_btn">
         <button className="get-started-button" onClick={(e) => handleContinueShopping(e)}>Continue Shopping</button>
         <br />
@@ -85,3 +64,5 @@ const handleRemove = (item) => {
 };
 
 export default CartItem;
+
+
