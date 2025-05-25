@@ -50,7 +50,6 @@ const handleRemove = (item) => {
     <div className="cart-container">
         <div className="cart-item">
         </div>
-      <h2 style={{ color: 'black' }}>Total Cart Amount: ${calculateTotalAmount()}</h2>
       <div>
         {cart.map(item => (
           <div className="cart-item" key={item.name}>
@@ -66,6 +65,7 @@ const handleRemove = (item) => {
               <div className="cart-item-total">Total: ${calculateTotalCost(item)}</div>
               <button className="cart-item-delete" onClick={() => handleRemove(item)}>Delete</button>
             </div>
+            <h2 style={{ color: 'black' }}>Total Cart Amount: ${calculateTotalAmount()}</h2>
           </div>
         ))}
       </div>
