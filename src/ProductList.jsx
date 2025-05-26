@@ -5,8 +5,6 @@ import './AboutUs.jsx'
 import CartItem from './CartItem';
 import { addItem } from './CartSlice';
 
-// console.log("ProductList sees addedItems:", addedItems);
-
 function ProductList({ onHomeClick }) {
     const [showCart, setShowCart] = useState(false);
     const dispatch = useDispatch();
@@ -319,7 +317,7 @@ function ProductList({ onHomeClick }) {
     <button
     className={`product-button ${addedItems && addedItems[plant.name] ? "added-to-cart" : ""}`}
     onClick={() => handleAddToCart(plant)}
-    // disabled={Boolean(addedItems[plant.name])}
+    disabled={Boolean(addedItems[plant.name])}
     >
     {addedItems && addedItems[plant.name] ? "Added to Cart" : "Add to Cart"}
     </button>
