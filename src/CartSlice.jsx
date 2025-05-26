@@ -9,11 +9,11 @@ export const CartSlice = createSlice({
     items: [], // Initialize items as an empty array
     addedItems: {}
   },
+  
   reducers: {
     addItem: (state, action) => {
     const { name, image, cost } = action.payload;
     const existingItem = state.items.find(item => item.name === name);
-    console.log("Redux cart state:", state);
 
 
   if (existingItem) {

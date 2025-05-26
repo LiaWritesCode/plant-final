@@ -5,7 +5,7 @@ import './AboutUs.jsx'
 import CartItem from './CartItem';
 import { addItem } from './CartSlice';
 
-console.log("ProductList sees addedItems:", addedItems);
+// console.log("ProductList sees addedItems:", addedItems);
 
 function ProductList({ onHomeClick }) {
     const [showCart, setShowCart] = useState(false);
