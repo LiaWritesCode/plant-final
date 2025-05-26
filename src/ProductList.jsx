@@ -299,9 +299,9 @@ function ProductList({ onHomeClick }) {
                 <div className="product-grid">
 {plantsArray.map((category, index) => ( // Loop through each category in plantsArray
   <div key={index}> {/* Unique key for each category div */}
-    <h1>
-      <div>{category.category}</div> {/* Display the category name */}
-    </h1>
+    
+      <h1 className="category-title">{category.category}</h1> {/* Display the category name */}
+    
     <div className="product-list"> {/* Container for the list of plant cards */}
       {category.plants.map((plant, plantIndex) => ( // Loop through each plant in the current category
         <div className="product-card" key={plantIndex}> {/* Unique key for each plant card */}
